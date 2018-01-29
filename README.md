@@ -4,7 +4,6 @@
 
 ##Sommaire
 Définition
-Utilisation
 La différence entre un site statique et un site dynamique
 Le MVC
 Les routes
@@ -32,12 +31,12 @@ En opposition avec le site dynamique qui s’adapte à ses utilisateurs. Il y a 
 Dans ce cas, le site doit être être codé de bout en bout.
 
 ###Modèle-vue-contrôleur ou MVC
-C’est un motif d’architecture logicielle destinée aux interfaces graphiqes pour les applis web. Il y a 3 types de modules aux responsabilités différentes : les modèles, les vues, les contrôleurs
+C’est un motif d’architecture logicielle destinée aux interfaces graphiques pour les applis web. Il y a 3 types de modules aux responsabilités différentes : les modèles, les vues, les contrôleurs
+
 -	Un modèle ( model) contenant les données à afficher
 Classes assurant la gestion de données. Elles sont déterminées automatiquement par Rails, les relations entre les tables sont spécifiquement spécifiées.
 
 -	Une vue (view) contenant la présentation de l’interface graphique, des informations à afficher pour l’utilisateur. C’est une combinaison de code HTML et Ruby dans des fichiers .html.erb.
-
 
 -	Un contrôleur (controller) contenant la logique concernant les actions effectuées par l’utilisateur. Ils vont chercher les données et les mettent à disposition des vues.
 « En interagissant avec une application Rails, un navigateur envoie une requête, qui est reçue par un serveur web et passée à un contrôleur Rails, qui lui-même prend en charge la suite des opérations. Ainsi le contrôleur rendra un « vue », qui est un modèle converti en HTML et renvoyé au navigateur . »
@@ -46,6 +45,18 @@ http://french.railstutorial.org/chapters/a-demo-app#sec:mvc_in_action
 
 ###Les routes
 Les routes permettent d’interpréter les URL et d’orienter vers les bonnes actions des controleurs. La configuration se trouve dans le fichier config/routes.rb
+
+
+###Les bases de données
+Pour stocker les données , il est nécessaire d’utiliser un base de données. Elle peut être MySQL, PostgreSQL, MongoDB.
+Il faut savoir que  Ruby on Rails utilise un ORM, un système transformant les tables de la base de données en version orientée objet, appelé Active Recor ;Rails va simplifier le code et traduire le code pour que les requêtes se fassent sur la base de données.
+
+
+
+###Le concept de migration
+Dans une migration, on liste les tables et colonnes à créer (ou supprimer). Pour notre application, voici ce que nous devons ajouter à ce fichier :
+
+###GET / POST
 « Les bases de l’option RESTful
 Par défaut, les routes Rails utilisent un format décrivant le type de ressource suivi d’une action et d’un éventuel identifiant. Les verbes HTTP permettent de distinguer les comportements concernant une ressource précise :
 – créer (GET/POST)
@@ -53,12 +64,11 @@ Par défaut, les routes Rails utilisent un format décrivant le type de ressourc
 – modifier via l’ID (GET/PATCH)
 – supprimer via l’ID (DELETE)
 – lister (GET) »
-###Les bases de données
-Pour stocker les données , il est nécessaire d’utiliser un base de données. Elle peut être MySQL, PostgreSQL, MongoDB.
-Il faut savoir que  Ruby on Rails utilise un ORM, un système transformant les tables de la base de données en version orientée objet, appelé Active Record ;Rails va simplifier le code et traduire le code pour que les requêtes se fassent sur la base de données.
+
+###Les relations entre les modèles et les BDD
+
+###Les fonctions du CRUD
+Les actions Create, Update et Destroy ne retournent pas typiquement des pages mais modifient des informations des utilisateurs dans la base de données.
 
 
-
-###Le concept de migration
-Dans une migration, on liste les tables et colonnes à créer (ou supprimer). Pour notre application, voici ce que nous devons ajouter à ce fichier :
 
